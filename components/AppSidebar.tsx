@@ -1,20 +1,54 @@
+"use client"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
   SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { ModeToggle } from "./ModeToggle"
 import { Button } from "./ui/button"
-import { Clapperboard } from "lucide-react"
+import { Clapperboard, Compass, Home, List, User } from "lucide-react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+const links = [
+  {
+    name: "Home",
+    url: "/",
+    icon: Home,
+  },
+  {
+    name: "Discover",
+    url: "/discover",
+    icon: Compass,
+  },
+  {
+    name: "Watchlist",
+    url: "/watchlist",
+    icon: List,
+  },
+  {
+    name: "Profile",
+    url: "/profile",
+    icon: User,
+  },
+]
 
 export function AppSidebar() {
+  const pathname = usePathname()
   return (
-    <Sidebar className='border-r-2 border-primary'>
+    <Sidebar className='  '>
       <SidebarHeader className='  '>
         <div className='flex items-center gap-2'>
-          <Button variant='ghost' size='icon' className='w-12 h-12 rounded-full bg-linear-to-r from-primary to-secondary text-background'>
+          <Button
+            variant='ghost'
+            size='icon'
+            className='w-12 h-12 rounded-full bg-linear-to-r from-primary to-secondary text-background'
+          >
             <Clapperboard className=' size-8 ' />
           </Button>
           <div className='flex flex-col items-start justify-center'>
@@ -29,11 +63,23 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup />
+        <SidebarMenu className='flex flex-col gap-2 p-2'>
+          {links.map((link) => (
+            <SidebarMenuItem key={link.name}>
+              <SidebarMenuButton asChild>
+                <Link
+                  href={link.url}
+                  className={`flex items-center gap-2 transition-all duration-300 ease-in-out  ${pathname === link.url ? "bg-primary text-background" : "text-muted-foreground"}`}
+                >
+                  <link.icon style={{ width: "1.25rem", height: "1.25rem" }} />
+                  <span className='text-xl'>{link.name}</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          ))}
+        </SidebarMenu>
         <SidebarGroup />
       </SidebarContent>
-      <SidebarFooter className='flex items-center justify-center'>
-        <ModeToggle />
-      </SidebarFooter>
     </Sidebar>
   )
 }
