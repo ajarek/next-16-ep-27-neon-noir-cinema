@@ -6,7 +6,6 @@ import {
   Scan,
   Share2,
   Sparkles,
-  Square,
   ThumbsUp,
   Volume2,
 } from "lucide-react"
@@ -25,14 +24,24 @@ import { Progress } from "@/components/ui/progress"
 export default function Home() {
   return (
     <div className='min-h-[calc(100vh-64px-30px)] w-full grid grid-cols-[1fr] lg:grid-cols-[3fr_1fr]   '>
-      <div className='w-full relative  lg:h-[650px] h-[400px] overflow-hidden border-2 '>
+      <div className='w-full relative  lg:h-162.5 h-100 overflow-hidden border-2 '>
         <Image src='/hero.png' alt='Hero' fill className=' object-cover' />
         <div className='absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent'></div>
         <div className='absolute bottom-12 md:left-12 left-4 flex flex-col w-[90%] gap-4 z-10'>
-          <h1 className="md:text-7xl text-2xl  font-bold font-['Space_Grotesk']">
+          <div className='flex items-center gap-2'>
+            <Button
+              size='sm'
+              className='flex items-center gap-2 bg-popover border-none text-primary  hover:text-secondary hover:bg-popover cursor-pointer'
+            >
+              <span className='text-primary'>NEW RELEASE</span>
+              <span className='text-primary'>*</span>
+              <span className='text-primary'>Action, Sci-Fi</span>
+            </Button>
+          </div>
+          <h1 className="md:text-7xl text-2xl text-white  font-bold font-['Space_Grotesk']">
             NEON DREAMS
           </h1>
-          <p className="md:text-lg text-sm md:w-[500px] w-[300px]  font-bold font-['Space_Grotesk']">
+          <p className="md:text-lg text-white text-sm md:w-125 w-75  font-bold font-['Space_Grotesk']">
             In a world where memories are traded like currency, one thief risks
             everything to recover the only dream that was never for sale.
           </p>
@@ -50,13 +59,13 @@ export default function Home() {
             </div>
             <div className='flex items-center gap-2'>
               <Volume2 className='cursor-pointer text-primary' />
-              <Progress value={33} className='w-[100px]' />
+              <Progress value={33} className='w-25' />
               <Scan className='cursor-pointer text-primary' />
             </div>
           </div>
         </div>
       </div>
-      <div className='w-full md:overflow-y-auto no-scrollbar md:h-[600px] h-screen p-4'>
+      <div className='w-full md:overflow-y-auto no-scrollbar md:h-150 h-screen p-4'>
         <div className='w-full flex items-center justify-between'>
           <h1 className='text-xl'>Trending Now</h1>
           <Button className='bg-popover border-none text-primary uppercase hover:text-secondary hover:bg-popover cursor-pointer'>
@@ -66,11 +75,12 @@ export default function Home() {
         <div className='w-full flex flex-col gap-4 mt-4'>
           {TrendingCard.map((card) => (
             <Card key={card.id} className='w-full text-white'>
-              <CardHeader className='p-0 relative md:h-[150px] h-[200px] w-full overflow-hidden'>
+              <CardHeader className='p-0 relative md:h-37.5 h-50 w-full overflow-hidden'>
                 <Image
                   src={card.image}
                   alt={card.title}
                   fill
+                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                   className='object-cover  hover:scale-110 transition-all duration-300'
                 />
                 <div className='absolute bottom-4 left-4 z-10'>

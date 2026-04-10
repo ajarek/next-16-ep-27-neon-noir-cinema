@@ -41,7 +41,7 @@ const links = [
 export function AppSidebar() {
   const pathname = usePathname()
   return (
-    <Sidebar className='  '>
+    <Sidebar className='bg-background'>
       <SidebarHeader className='  '>
         <div className='flex items-center gap-2'>
           <Button
