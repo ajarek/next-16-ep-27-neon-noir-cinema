@@ -14,7 +14,7 @@ const DiscoverPage = () => {
   const [activeType, setActiveType] = useState("All")
 
   return (
-    <div className='flex min-h-[calc(100vh-94px)] flex-col p-4 gap-4'>
+    <div className='flex min-h-[calc(100vh-94px)] shrink-0 flex-col p-4 gap-4'>
       <div className='flex w-full flex-wrap items-start gap-4'>
         {typesFilms.map((type) => (
           <Button
@@ -93,6 +93,7 @@ const DiscoverPage = () => {
                 src={thrill.image}
                 alt={thrill.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className='object-cover opacity-60 hover:opacity-100 transition-opacity duration-300'
               />
                 </CardHeader>
@@ -125,6 +126,7 @@ const DiscoverPage = () => {
                 src={thrill.image}
                 alt={thrill.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className='object-cover opacity-60 hover:opacity-100 transition-opacity duration-300'
               />
                 </CardHeader>

@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className='min-h-[calc(100vh-64px-30px)] w-full grid grid-cols-[1fr] lg:grid-cols-[3fr_1fr]   '>
       <div className='w-full relative  lg:h-162.5 h-100 overflow-hidden border-2 '>
-        <Image src='/hero.png' alt='Hero' fill className=' object-cover' />
+        <Image src='/hero.png' alt='Hero' fill loading="eager" className=' object-cover' />
         <div className='absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent'></div>
         <div className='absolute bottom-12 md:left-12 left-4 flex flex-col w-[90%] gap-4 z-10'>
           <div className='flex items-center gap-2'>

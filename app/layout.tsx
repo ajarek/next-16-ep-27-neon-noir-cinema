@@ -5,6 +5,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/AppSidebar"
 import { ThemeProvider } from "next-themes"
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -42,9 +43,10 @@ export default function RootLayout({
           <Navbar />
           <SidebarProvider className="min-h-0! flex-1 overflow-hidden">
             <AppSidebar />
-            <main className='w-full flex-1 overflow-y-auto'>
+            <main className='flex flex-col w-full flex-1 overflow-y-auto'>
               <SidebarTrigger />
               {children}
+              <Footer />
             </main>
           </SidebarProvider>
         </ThemeProvider>
