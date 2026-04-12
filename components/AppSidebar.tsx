@@ -2,41 +2,17 @@
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { ModeToggle } from "./ModeToggle"
 import { Button } from "./ui/button"
-import { Clapperboard, Compass, Home, List, User } from "lucide-react"
+import { Clapperboard } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-
-const links = [
-  {
-    name: "Home",
-    url: "/",
-    icon: Home,
-  },
-  {
-    name: "Discover",
-    url: "/discover",
-    icon: Compass,
-  },
-  {
-    name: "Watchlist",
-    url: "/watchlist",
-    icon: List,
-  },
-  {
-    name: "Profile",
-    url: "/profile",
-    icon: User,
-  },
-]
+import { links } from "@/data/links"
 
 export function AppSidebar() {
   const pathname = usePathname()

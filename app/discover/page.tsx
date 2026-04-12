@@ -7,7 +7,13 @@ import { cn } from "@/lib/utils"
 import { Play } from "lucide-react"
 import Image from "next/image"
 import { nightThrills } from "@/data/nightThrills"
-import { Card, CardContent, CardDescription,  CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { sundayMorning } from "@/data/sundayMorning "
 
 const DiscoverPage = () => {
@@ -87,25 +93,30 @@ const DiscoverPage = () => {
         <div className='w-full grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 mt-4'>
           {nightThrills.map((thrill) => (
             <Card key={thrill.id} className='w-full'>
-                <CardHeader className='w-full h-100 relative'>
-                    
-              <Image
-                src={thrill.image}
-                alt={thrill.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className='object-cover opacity-60 hover:opacity-100 transition-opacity duration-300'
-              />
-                </CardHeader>
-                <CardContent>
-                    <CardTitle className="text-xl text-white hover:text-primary">{thrill.title}</CardTitle>
-                   
-                <div className="flex items-center gap-2 bg-transparent ">
-                    <CardDescription className="text-primary">{thrill.productionYear}</CardDescription>
-                    <CardDescription className="">*</CardDescription>
-                    <CardDescription className="text-[#00DBE9]">{thrill.rating} Rating</CardDescription>
+              <CardHeader className='w-full h-100 relative'>
+                <Image
+                  src={thrill.image}
+                  alt={thrill.title}
+                  fill
+                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                  className='object-cover opacity-60 hover:opacity-100 transition-opacity duration-300'
+                />
+              </CardHeader>
+              <CardContent>
+                <CardTitle className='text-xl text-white hover:text-primary'>
+                  {thrill.title}
+                </CardTitle>
+
+                <div className='flex items-center gap-2 bg-transparent '>
+                  <CardDescription className='text-primary'>
+                    {thrill.productionYear}
+                  </CardDescription>
+                  <CardDescription className=''>*</CardDescription>
+                  <CardDescription className='text-[#00DBE9]'>
+                    {thrill.rating} Rating
+                  </CardDescription>
                 </div>
-                </CardContent>
+              </CardContent>
             </Card>
           ))}
         </div>
@@ -120,21 +131,20 @@ const DiscoverPage = () => {
         <div className='w-full grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-4 mt-4'>
           {sundayMorning.map((thrill) => (
             <Card key={thrill.id} className='w-full'>
-                <CardHeader className='w-full h-75 relative '>
-                   
-              <Image
-                src={thrill.image}
-                alt={thrill.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className='object-cover opacity-60 hover:opacity-100 transition-opacity duration-300'
-              />
-                </CardHeader>
-                <CardContent>
-                    <CardTitle className="text-xl text-white hover:text-primary">{thrill.title}</CardTitle>
-                   
-               
-                </CardContent>
+              <CardHeader className='w-full h-75 relative '>
+                <Image
+                  src={thrill.image}
+                  alt={thrill.title}
+                  fill
+                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                  className='object-cover opacity-60 hover:opacity-100 transition-opacity duration-300'
+                />
+              </CardHeader>
+              <CardContent>
+                <CardTitle className='text-xl text-white hover:text-primary'>
+                  {thrill.title}
+                </CardTitle>
+              </CardContent>
             </Card>
           ))}
         </div>

@@ -41,7 +41,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <SidebarProvider className="min-h-0! flex-1 overflow-hidden">
+          <SidebarProvider className='min-h-0! flex-1 overflow-hidden'>
             <AppSidebar />
             <main className='flex flex-col w-full flex-1 overflow-y-auto'>
               <SidebarTrigger />
