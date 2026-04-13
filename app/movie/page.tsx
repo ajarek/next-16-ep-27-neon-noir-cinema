@@ -80,8 +80,8 @@ export default async function MoviePage(props: Props) {
 
       {movie && (
         <div className='animate-in fade-in slide-in-from-bottom-4 duration-700'>
-          <h1 className='text-4xl font-bold mb-4 text-white'>{movie.title}</h1>
-          <p className='text-zinc-300 mb-8 text-lg leading-relaxed'>
+          <h1 className='text-4xl font-bold mb-4'>{movie.title}</h1>
+          <p className='text-muted-foreground mb-8 text-lg leading-relaxed'>
             {movie.overview}
           </p>
 
@@ -96,7 +96,7 @@ export default async function MoviePage(props: Props) {
               />
             </div>
           ) : (
-            <p className='text-zinc-500 italic'>
+            <p className='text-muted-foreground italic'>
               Brak zwiastuna YouTube dla tego filmu.
             </p>
           )}

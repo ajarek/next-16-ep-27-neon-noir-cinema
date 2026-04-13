@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Cine Noir",
-  description: "Your personal movie streaming platform",
+  description: "Test video streaming platform",
 }
 
 export default function RootLayout({
