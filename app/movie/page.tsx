@@ -75,7 +75,7 @@ export default async function MoviePage(props: Props) {
       </form>
 
       {query && !movie && (
-        <p className='text-red-400'>Nie znaleziono filmu "{query}".</p>
+        <p className='text-red-400'>Video not found &quot;{query}&quot;.</p>
       )}
 
       {movie && (
@@ -97,7 +97,7 @@ export default async function MoviePage(props: Props) {
             </div>
           ) : (
             <p className='text-muted-foreground italic'>
-              Brak zwiastuna YouTube dla tego filmu.
+              No trailer found for this movie.
             </p>
           )}
         </div>
